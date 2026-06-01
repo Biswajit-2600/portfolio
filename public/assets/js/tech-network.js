@@ -25,52 +25,10 @@
     "\uf1c0", // database
     "\uf0c2", // cloud
     "\uf121", // code
-    "\uf544", // robot
-    "\uf085", // gear
     "\uf109", // laptop
     "\uf120", // terminal
-    "\uf023", // lock
-    "\uf1eb", // wifi
-    "\uf6ff", // network-wired
-    "\uf2db", // microchip
     "\uf108", // desktop
-    "\uf11c", // keyboard
-    "\uf0ad", // wrench
-    "\uf013", // cog
-    "\uf188", // bug
-    "\uf5dc", // brain
-    "\uf5d2", // atom
-    "\uf0e8", // sitemap
-    "\uf03e", // camera
-    "\uf135", // rocket
-    "\uf0eb", // lightbulb
-    "\uf2f6", // signal
-    "\uf242", // battery
-    "\uf0c1", // link
-    "\uf1c6", // file-code
-    "\uf1c7", // file-archive
-    "\uf1c3", // file-lines
-    "\uf0a3", // certificate
-    "\uf132", // shield
-    "\uf240", // plug
-    "\uf26c", // tv
-    "\uf3fd", // memory
-    "\uf538", // mobile-screen
-    "\uf201", // chart-line
-    "\uf080", // chart-bar
-    "\uf1fe", // chart-pie
-    "\uf0e0", // envelope
-    "\uf095", // phone
-    "\uf02d", // book
-    "\uf073", // calendar
-    "\uf0c0", // users
-    "\uf007", // user
-    "\uf466", // boxes
     "\uf126", // code-branch
-    "\uf0c7", // save
-    "\uf15b", // file
-    "\uf09d", // credit-card
-    "\uf029", // qrcode
   ].map((code) => ({ code, family: "Font Awesome 6 Free", weight: "900" }));
 
   // Brands icon set (Font Awesome Brands) - weight 400
@@ -82,10 +40,7 @@
     "\uf419", // node
     "\uf3e2", // python
     "\uf09b", // github
-    "\uf0e1", // linkedin
     "\uf16c", // stack-overflow
-    "\uf099", // twitter
-    "\uf09a", // facebook
     "\uf3d4", // npm
     "\uf395", // docker
     "\uf1d3", // git
@@ -94,54 +49,32 @@
     "\uf375", // aws
     "\uf4e4", // java
     "\uf17c", // linux
-    "\uf17b", // android
-    "\uf179", // apple
-    "\uf3ab", // chrome
-    "\uf269", // firefox
-    "\uf26b", // edge
-    "\uf3b1", // safari
     "\uf392", // ubuntu
     "\uf3af", // fedora
     "\uf17a", // windows
     "\uf42d", // php
-    "\uf1a9", // droplet
-    "\uf1bc", // spotify
-    "\uf167", // youtube
-    "\uf16d", // instagram
     "\uf3d0", // slack
     "\uf1d1", // gitlab
     "\uf3d2", // trello
-    "\uf1e7", // dropbox
-    "\uf1a0", // google
     "\uf412", // digital-ocean
     "\uf3d7", // wordpress
-    "\uf16a", // reddit
     "\uf415", // bootstrap
     "\uf41e", // sass
     "\uf799", // figma
     "\uf7c6", // sketch
-    "\uf1f0", // stripe
-    "\uf1ed", // paypal
-    "\uf3ca", // microsoft
     "\uf7bc", // redhat
     "\uf3b6", // jenkins
-    "\uf2c6", // telegram
     "\uf3b7", // php-alt
     "\uf3af", // dev
     "\uf0d5", // stack-overflow-alt
-    "\uf1b4", // behance
     "\uf1b5", // dribbble
     "\uf3d3", // medium
     "\uf1cb", // codepen
-    "\uf171", // bitbucket
     "\uf841", // flutter
-    "\uf3b9", // unity
-    "\uf392", // discord
-    "\uf268", // discord
   ].map((code) => ({ code, family: "Font Awesome 6 Brands", weight: "400" }));
 
   const CONFIG = {
-    NUM_ICONS: 80, // Reduced from 150 for better performance
+    NUM_ICONS: 150, // Reduced from 150 for better performance
     ICON_SIZE: 20,
     MOVE_SPEED: 0.008, // Auto-rotation speed
     ICON_MOVE_SPEED: 0.0, // Speed of icons moving on surface

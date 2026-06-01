@@ -345,41 +345,41 @@ const projectsData = {
     {
       title: "Portfolio Website - Interactive 3D Experience",
       desc: "A cutting-edge personal portfolio showcasing modern web development skills with interactive 3D elements, smooth animations, and responsive design. Features include dynamic project showcases, skill visualizations, and contact forms.",
-      video: "public/assets/videos/portfolio-demo.mp4",
+      video: "assets/videos/project1.mp4",
       href: "https://biswajit-me-3d.vercel.app",
       github: "https://github.com/Biswajit-2600/portfolio-3d",
-      logo: "public/assets/icons/favicon.svg",
+      logo: "assets/icons/favicon.svg",
       logoStyle: {
         backgroundColor: "#0E1F38",
         border: "0.2px solid #0E2D58",
         boxShadow: "0px 0px 60px 0px #2F67B64D",
       },
-      spotlight: "public/assets/images/spotlight.png",
+      spotlight: "assets/images/spotlight.png",
       tags: [
-        { name: "HTML5", path: "public/assets/images/1.png" },
-        { name: "CSS3", path: "public/assets/images/2.png" },
-        { name: "JavaScript", path: "public/assets/images/3.webp" },
-        { name: "Matter.js", path: "public/assets/images/4.webp" },
+        { name: "HTML5", path: "assets/icons/tech_logo/html.png" },
+        { name: "CSS3", path: "assets/icons/tech_logo/css.png" },
+        { name: "JavaScript", path: "assets/icons/tech_logo/javascript.png" },
+        { name: "GSAP", path: "assets/icons/tech_logo/gsap.png" },
       ],
       texture: null,
     },
     {
       title: "Weather Dashboard - Real-time Updates",
       desc: "A comprehensive weather application providing real-time weather data, forecasts, and interactive maps. Features location-based weather updates, hourly and weekly forecasts, and beautiful weather visualizations.",
-      video: "public/assets/videos/portfolio-demo.mp4",
+      video: "assets/videos/project2.mp4",
       href: "https://website-under-construction.vercel.app/",
       github: "#",
-      logo: "public/assets/icons/favicon.svg",
+      logo: "assets/icons/favicon.svg",
       logoStyle: {
         backgroundColor: "#0E1F38",
         border: "0.2px solid #0E2D58",
         boxShadow: "0px 0px 60px 0px #2F67B64D",
       },
-      spotlight: "public/assets/images/spotlight.png",
+      spotlight: "assets/images/spotlight.png",
       tags: [
-        { name: "React", path: "public/assets/images/5.png" },
-        { name: "JavaScript", path: "public/assets/images/3.webp" },
-        { name: "API", path: "public/assets/images/6.png" },
+        { name: "React", path: "assets/icons/tech_logo/reactjs.png" },
+        { name: "JavaScript", path: "assets/icons/tech_logo/javascript.png" },
+        { name: "Node.js", path: "assets/icons/tech_logo/nodejs.png" },
       ],
       texture: null,
     },
@@ -388,41 +388,41 @@ const projectsData = {
     {
       title: "E-Commerce Platform - Full Stack Solution",
       desc: "A comprehensive e-commerce platform with product management, shopping cart functionality, secure payment integration, and order tracking. Features include user authentication, product search, and admin dashboard.",
-      video: "public/assets/videos/portfolio-demo.mp4",
+      video: "assets/videos/project3.mp4",
       href: "https://website-under-construction.vercel.app/",
       github: "#",
-      logo: "public/assets/icons/favicon.svg",
+      logo: "assets/icons/favicon.svg",
       logoStyle: {
         backgroundColor: "#0E1F38",
         border: "0.2px solid #0E2D58",
         boxShadow: "0px 0px 60px 0px #2F67B64D",
       },
-      spotlight: "public/assets/images/spotlight.png",
+      spotlight: "assets/images/spotlight.png",
       tags: [
-        { name: "React", path: "public/assets/images/5.png" },
-        { name: "Node.js", path: "public/assets/images/6.png" },
-        { name: "MongoDB", path: "public/assets/images/7.png" },
-        { name: "Express", path: "public/assets/images/8.png" },
+        { name: "React", path: "assets/icons/tech_logo/reactjs.png" },
+        { name: "Node.js", path: "assets/icons/tech_logo/nodejs.png" },
+        { name: "MongoDB", path: "assets/icons/tech_logo/mongodb.png" },
+        { name: "Express", path: "assets/icons/tech_logo/express.png" },
       ],
       texture: null,
     },
     {
       title: "CRM Dashboard - Business Management",
       desc: "A sophisticated Customer Relationship Management system designed to streamline business operations. Features include client management, sales tracking, analytics dashboard, and automated reporting.",
-      video: "public/assets/videos/portfolio-demo.mp4",
+      video: "assets/videos/project1.mp4",
       href: "https://website-under-construction.vercel.app/",
       github: "#",
-      logo: "public/assets/icons/favicon.svg",
+      logo: "assets/icons/favicon.svg",
       logoStyle: {
         backgroundColor: "#0E1F38",
         border: "0.2px solid #0E2D58",
         boxShadow: "0px 0px 60px 0px #2F67B64D",
       },
-      spotlight: "public/assets/images/spotlight.png",
+      spotlight: "assets/images/spotlight.png",
       tags: [
-        { name: "Vue.js", path: "public/assets/images/8.png" },
-        { name: "Laravel", path: "public/assets/images/7.png" },
-        { name: "MySQL", path: "public/assets/images/9.png" },
+        { name: "React", path: "assets/icons/tech_logo/reactjs.png" },
+        { name: "MySQL", path: "assets/icons/tech_logo/mysql.png" },
+        { name: "TypeScript", path: "assets/icons/tech_logo/typescript.png" },
       ],
       texture: null,
     },
@@ -535,21 +535,16 @@ function renderProject() {
     }`;
   }
 
-  // Initialize 3D model after DOM is updated
-  setTimeout(() => init3DModel(), 350);
-
-  // ---------------------------------------------
-  // UPDATE LAPTOP SCREEN VIDEO ON PROJECT CHANGE
-  // ---------------------------------------------
-  if (videoElement3D && screenMesh3D) {
-    const videoSrc = project.video;
-
-    if (videoSrc) {
-      videoElement3D.src = videoSrc;
-      videoElement3D
-        .play()
-        .catch((err) => console.log("Autoplay blocked:", err));
+  // Update laptop screen video on project change
+  if (screenMesh3D && videoElement3D) {
+    if (project.video) {
+      videoElement3D.src = project.video;
+      videoElement3D.load();
+      videoElement3D.play().catch((err) => console.log("Autoplay blocked:", err));
     }
+  } else {
+    // Initialize 3D model first time (not yet loaded)
+    setTimeout(() => init3DModel(), 350);
   }
 }
 
@@ -623,7 +618,6 @@ function cleanup3DResources() {
   // Dispose renderer
   if (renderer3D) {
     renderer3D.dispose();
-    renderer3D.forceContextLoss();
     renderer3D = null;
   }
 
@@ -660,7 +654,7 @@ function init3DModel() {
     0.1,
     1000
   );
-  camera3D.position.set(0, 0, 5); // Front facing position
+  camera3D.position.set(0, 0, 5);  // increase Z = further away (smaller), decrease = closer (bigger)
   camera3D.lookAt(0, 0, 0);
 
   // Renderer setup
@@ -689,37 +683,16 @@ function init3DModel() {
   directionalLight3.position.set(0, -5, 0);
   scene3D.add(directionalLight3);
 
-  // Load laptop model
+  // Load laptop model (Draco compressed — requires DRACOLoader)
+  const dracoLoader = new THREE.DRACOLoader();
+  dracoLoader.setDecoderPath('/assets/js/libs/draco/gltf/');
+
   const loader = new THREE.GLTFLoader();
+  loader.setDRACOLoader(dracoLoader);
   loader.load(
-    "public/assets/models/laptop-model.glb",
+    "assets/models/computer.glb",
     function (gltf) {
       laptop3D = gltf.scene;
-
-      const screenMesh = laptop3D.getObjectByName("Object_8");
-
-      if (screenMesh) {
-        const video = document.createElement("video");
-        video.src = "public/assets/videos/sample.mp4"; // temporary placeholder
-        video.loop = true;
-        video.muted = true;
-        video.playsInline = true;
-        video.autoplay = true;
-
-        video.addEventListener("loadeddata", () => {
-          const videoTex = new THREE.VideoTexture(video);
-          videoTex.minFilter = THREE.LinearFilter;
-          videoTex.magFilter = THREE.LinearFilter;
-          videoTex.format = THREE.RGBAFormat;
-
-          screenMesh.material = new THREE.MeshBasicMaterial({
-            map: videoTex,
-            toneMapped: false,
-          });
-
-          video.play();
-        });
-      }
 
       // Center and scale the model
       const box = new THREE.Box3().setFromObject(laptop3D);
@@ -727,51 +700,55 @@ function init3DModel() {
       const size = box.getSize(new THREE.Vector3());
 
       const maxDim = Math.max(size.x, size.y, size.z);
-      const scale = 2.5 / maxDim;
+      const scale = 5 / maxDim;  // increase number = bigger, decrease = smaller
       laptop3D.scale.setScalar(scale);
-
       laptop3D.position.sub(center.multiplyScalar(scale));
-
-      // Rotate to face front (adjust based on model orientation)
       laptop3D.rotation.y = 0;
-      laptop3D.rotation.x = 0;
-      laptop3D.rotation.z = 0;
 
-      screenMesh3D = laptop3D.getObjectByName("Object_8");
+      screenMesh3D = laptop3D.getObjectByName("monitor-screen");
 
       if (screenMesh3D) {
-        console.log("Laptop screen found:", screenMesh3D);
-
         // Create HTML5 video element
         videoElement3D = document.createElement("video");
         videoElement3D.muted = true;
         videoElement3D.loop = true;
         videoElement3D.playsInline = true;
         videoElement3D.autoplay = true;
+        videoElement3D.crossOrigin = "anonymous";
+
+        // Set video to the current project
+        const currentProject = projectsData[currentProjectType][currentProjectIndex];
+        if (currentProject.video) {
+          videoElement3D.src = currentProject.video;
+        }
 
         // Create Three.js VideoTexture
         videoTexture3D = new THREE.VideoTexture(videoElement3D);
         videoTexture3D.minFilter = THREE.LinearFilter;
         videoTexture3D.magFilter = THREE.LinearFilter;
         videoTexture3D.format = THREE.RGBAFormat;
+        videoTexture3D.flipY = false;
 
         // Apply video material to screen
         screenMesh3D.material = new THREE.MeshBasicMaterial({
           map: videoTexture3D,
           toneMapped: false,
         });
+
+        videoElement3D.load();
+        videoElement3D.play().catch((err) => console.log("Autoplay blocked:", err));
       }
 
       scene3D.add(laptop3D);
 
-      // Setup drag controls
+      // Setup orbit controls
       controls3D = new THREE.OrbitControls(camera3D, renderer3D.domElement);
       controls3D.enableDamping = true;
       controls3D.dampingFactor = 0.05;
       controls3D.enableZoom = true;
       controls3D.enablePan = false;
-      controls3D.minDistance = 3;
-      controls3D.maxDistance = 10;
+      controls3D.minDistance = 1.5;
+      controls3D.maxDistance = 20;
       controls3D.target.set(0, 0, 0);
 
       animate3D();
@@ -779,7 +756,6 @@ function init3DModel() {
     undefined,
     function (error) {
       console.error("Error loading 3D model:", error);
-      // Show fallback message
       container.innerHTML =
         '<div class="project-preview-placeholder">3D Model Loading...</div>';
     }
