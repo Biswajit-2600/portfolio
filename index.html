@@ -31,7 +31,107 @@
       type="module"
     ></script>
   </head>
-  <body>
+  <body class="intro-active">
+    <!-- Intro Card (kuber-style) -->
+    <div id="intro-overlay">
+      <div class="ic-scale-wrapper">
+        <div class="ic-outer">
+          <!-- Animated border glow -->
+          <div class="ic-border-glow"></div>
+
+          <!-- Social toggle (top-right) -->
+          <button class="ic-social-toggle" id="ic-social-toggle" onclick="toggleSocialBar()">
+            <i class="fa-solid fa-envelope-open-text"></i>
+          </button>
+
+          <!-- Main glass card -->
+          <div class="ic-card">
+            <!-- Rising bubble background -->
+            <div class="ic-area">
+              <ul class="ic-circles">
+                <li></li><li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li><li></li>
+              </ul>
+            </div>
+
+            <!-- Content row -->
+            <div class="ic-content">
+              <!-- Left: text -->
+              <div class="ic-left">
+                <div class="ic-badge">Open to Work</div>
+                <h1 class="ic-title">Hello,<br><span class="ic-title-gradient">I'm Biswajit</span></h1>
+                <p class="ic-desc">
+                  Artisan crafting
+                  <span class="ic-accent">intelligent, scalable web applications</span>
+                  with modern tech stacks.
+                </p>
+                <div class="ic-btns">
+                  <button class="ic-btn-explore" onclick="enterPortfolio()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Explore Portfolio
+                  </button>
+                  <a href="https://drive.google.com/file/d/1dym67QUe5TB_RrsBXl4Q3sXyGq0S267B/view?usp=sharing"
+                     target="_blank" rel="noopener noreferrer" class="ic-btn-resume">
+                    <i class="fa-solid fa-download"></i>
+                    Resume
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right: avatar -->
+              <div class="ic-right">
+                <div class="ic-spin-ring"></div>
+                <div class="ic-glow-aura"></div>
+                <div class="ic-avatar">
+                  <img src="assets/images/display-picture.png" alt="Biswajit Panda" />
+                </div>
+                <!-- Floating availability badge -->
+                <div class="ic-avail-badge">
+                  <div class="ic-avail-label">Availability</div>
+                  <div class="ic-avail-status">
+                    <span class="ic-avail-dot"></span>
+                    Open for Opportunities
+                    <!-- Dangling experience tag -->
+                    <div class="ic-tag-hang">
+                      <div class="ic-hang-nail"></div>
+                      <div class="ic-hang-string"></div>
+                      <div class="ic-hang-tag" id="ic-exp-tag">1+ Yr</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social bottom bar (toggled) -->
+          <div class="ic-social-bar" id="ic-social-bar">
+            <div class="ic-social-btns">
+              <div class="ic-soc-btn" style="--soc-col:#1e90ff">
+                <a href="https://www.linkedin.com/in/biswajit-panda-me/" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+              </div>
+              <div class="ic-soc-btn" style="--soc-col:#0bd6f6">
+                <a href="mailto:biswajitpanda754@gmail.com" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-solid fa-envelope"></i>
+                </a>
+              </div>
+              <div class="ic-soc-btn" style="--soc-col:#9bb8f7">
+                <a href="https://github.com/Biswajit-2600" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+              <div class="ic-soc-btn" style="--soc-col:#4ade80">
+                <a href="tel:+919658309750" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-solid fa-phone"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Starfield Canvas Background -->
     <canvas id="starfield"></canvas>
 
@@ -1393,5 +1493,32 @@
 
     <!-- Finally your app -->
     <script src="assets/js/app.js"></script>
+
+    <script>
+      function enterPortfolio() {
+        const overlay = document.getElementById('intro-overlay');
+        overlay.classList.add('exit');
+        document.body.classList.remove('intro-active');
+        setTimeout(() => { overlay.style.display = 'none'; }, 650);
+      }
+
+      function toggleSocialBar() {
+        document.getElementById('ic-social-bar').classList.toggle('visible');
+      }
+
+      (function () {
+        function calcExp(startDate) {
+          const s = new Date(startDate), n = new Date();
+          let yr = n.getFullYear() - s.getFullYear();
+          let mo = n.getMonth() - s.getMonth();
+          if (mo < 0) { yr--; mo += 12; }
+          if (yr === 0) return mo + ' Mos';
+          if (mo === 0) return yr + '+ Yrs';
+          return yr + ' Yr' + (yr > 1 ? 's' : '') + ' ' + mo + ' Mos';
+        }
+        const tag = document.getElementById('ic-exp-tag');
+        if (tag) tag.textContent = calcExp('2023-06-01');
+      })();
+    </script>
   </body>
 </html>

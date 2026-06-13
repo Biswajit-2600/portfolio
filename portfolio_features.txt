@@ -18,6 +18,6 @@ Features from videos in playlist (tentative):-
 
 -- skills: 6, 7							-- ongoing
 -- experience/education: 3, 7			-- 	
--- contact: 3, 4						-- 	(ideas -- an icon will be there and on clicking it, all the different icons will open from it like a 							  graph or wheel)
+-- contact: 3, 4						-- (ideas -- an icon will be there and on clicking it, all the different icons will open from it like a 							  graph or wheel)
 
 social icons -- contact section (whatsapp, twitter, discord, telegram)

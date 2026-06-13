@@ -19,58 +19,56 @@
   let animationId = null;
 
   // Solid-only icon set (Font Awesome Free Solid) for reliable canvas rendering
-  // Each entry: { code: '\ufxxx', family: 'Font Awesome 6 Free', weight: '900' }
   const solidIcons = [
     "\uf233", // server
     "\uf1c0", // database
     "\uf0c2", // cloud
-    "\uf121", // code
     "\uf109", // laptop
     "\uf120", // terminal
     "\uf108", // desktop
     "\uf126", // code-branch
+    "\uf7d9", // network-wired
+    "\uf542", // robot
+    "\uf6ff", // brain
+    "\uf3ed", // shield-alt (security)
   ].map((code) => ({ code, family: "Font Awesome 6 Free", weight: "900" }));
 
   // Brands icon set (Font Awesome Brands) - weight 400
   const brandIcons = [
-    "\uf41b", // react
-    "\uf3b9", // js
-    "\uf13b", // html5
-    "\uf13c", // css3
-    "\uf419", // node
-    "\uf3e2", // python
-    "\uf09b", // github
-    "\uf16c", // stack-overflow
+    "\uf41b", // React
+    "\uf3b9", // JavaScript
+    "\uf13b", // HTML5
+    "\uf13c", // CSS3
+    "\uf419", // Node.js
+    "\uf3e2", // Python
+    "\uf09b", // GitHub
+    "\uf395", // Docker
+    "\uf1d3", // Git
+    "\uf41f", // Vue.js
+    "\uf420", // Angular
+    "\uf375", // AWS
+    "\uf4e4", // Java
+    "\uf17c", // Linux
+    "\uf17a", // Windows
+    "\uf41e", // Sass
+    "\uf799", // Figma
+    "\uf3b6", // Jenkins
+    "\uf7bb", // Raspberry Pi
+    "\uf1cb", // CodePen
     "\uf3d4", // npm
-    "\uf395", // docker
-    "\uf1d3", // git
-    "\uf41f", // vuejs
-    "\uf420", // angular
-    "\uf375", // aws
-    "\uf4e4", // java
-    "\uf17c", // linux
-    "\uf392", // ubuntu
-    "\uf3af", // fedora
-    "\uf17a", // windows
-    "\uf42d", // php
-    "\uf3d0", // slack
-    "\uf1d1", // gitlab
-    "\uf3d2", // trello
-    "\uf412", // digital-ocean
-    "\uf3d7", // wordpress
-    "\uf415", // bootstrap
-    "\uf41e", // sass
-    "\uf799", // figma
-    "\uf7c6", // sketch
-    "\uf7bc", // redhat
-    "\uf3b6", // jenkins
-    "\uf3b7", // php-alt
-    "\uf3af", // dev
-    "\uf0d5", // stack-overflow-alt
-    "\uf1b5", // dribbble
-    "\uf3d3", // medium
-    "\uf1cb", // codepen
-    "\uf841", // flutter
+    "\uf412", // DigitalOcean
+    "\uf1d1", // GitLab
+    "\uf7bc", // Red Hat
+    "\uf16c", // Stack Overflow
+    "\uf3ca", // Microsoft / Azure
+    "\uf1a0", // Google / GCP
+    "\uf3af", // DEV Community
+    "\uf113", // GitHub Alt
+    "\uf5f7", // HackerRank
+    "\uf181", // Trello
+    "\uf19a", // WordPress
+    "\uf198", // Slack
+    "\uf7c6", // Sketch
   ].map((code) => ({ code, family: "Font Awesome 6 Brands", weight: "400" }));
 
   const CONFIG = {
